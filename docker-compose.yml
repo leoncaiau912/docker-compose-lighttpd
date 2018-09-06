@@ -1,0 +1,15 @@
+version: '2'
+services:
+     lighttpd:
+#         image: telegraf
+         build: lighttpd
+           #INFLUXB: 13.210.153.32
+#         network_mode: host
+#         container_name: telegraf
+         environment:
+             - TITLE=Leon
+             - NUMBER=1012
+         ports:
+             - 80:80
+         restart: unless-stopped
+
